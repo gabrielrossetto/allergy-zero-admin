@@ -48,8 +48,8 @@ export default class App extends Component {
             isFishContaining: false,
             isCaffeineContaining: false,
             isPeanutContaining: false,
-            isAllowedToVegetarians: true,
-            isAllowedToVegans: true,
+            isAllowedToVegetarians: false,
+            isAllowedToVegans: false,
           });
           alert('Produto adicionado!')
         })
