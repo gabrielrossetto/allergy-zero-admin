@@ -31,7 +31,7 @@ export default class App extends Component {
 
     const addProduct = () => {
       if (this.state.description === '') {
-        alert('Fill at least the description!')
+        alert('Preencha pelo menos a descrição!')
       } else {
         this.dbRef.add({
           ...this.state
@@ -51,10 +51,10 @@ export default class App extends Component {
             isAllowedToVegetarians: true,
             isAllowedToVegans: true,
           });
-          alert('Product added!')
+          alert('Produto adicionado!')
         })
           .catch((err) => {
-            console.error("Error found: ", err);
+            console.error("Error : ", err);
           });
       }
     }
@@ -63,9 +63,9 @@ export default class App extends Component {
       <>
         <h1>Allergy Zero Admin</h1>
         <form>
-          <input type="text" placeholder="Description" value={description} onChange={event => updateForm('description', event, 'value')} />
+          <input type="text" placeholder="Descrição" value={description} onChange={event => updateForm('description', event, 'value')} />
 
-          <label> Is Soy Containing? </label>
+          <label> Contém Soja? </label>
           <label class="switch">
             <input type="checkbox" value={isSoyContaining} onChange={event => updateForm('isSoyContaining', event, 'checked')} />
             <span class="slider"></span>
@@ -73,7 +73,7 @@ export default class App extends Component {
           <br></br>
           <br></br>
 
-          <label> Is Gluten Containing? </label>
+          <label> Contém Glúten? </label>
           <label class="switch">
             <input type="checkbox" value={isGlutenContaining} onChange={event => updateForm('isGlutenContaining', event, 'checked')} />
             <span class="slider"></span>
@@ -81,7 +81,7 @@ export default class App extends Component {
           <br></br>
           <br></br>
 
-          <label> Is Lactose Containing? </label>
+          <label> Contém Lactose? </label>
           <label class="switch">
             <input type="checkbox" value={isLactoseContaining} onChange={event => updateForm('isLactoseContaining', event, 'checked')} />
             <span class="slider"></span>
@@ -89,7 +89,7 @@ export default class App extends Component {
           <br></br>
           <br></br>
 
-          <label> Is Egg Containing? </label>
+          <label> Contém Ovo? </label>
           <label class="switch">
             <input type="checkbox" value={isEggContaining} onChange={event => updateForm('isEggContaining', event, 'checked')} />
             <span class="slider"></span>
@@ -97,7 +97,7 @@ export default class App extends Component {
           <br></br>
           <br></br>
 
-          <label> Is Beef Containing? </label>
+          <label> Contém Carne Bovina? </label>
           <label class="switch">
             <input type="checkbox" value={isBeefContaining} onChange={event => updateForm('isBeefContaining', event, 'checked')} />
             <span class="slider"></span>
@@ -105,7 +105,7 @@ export default class App extends Component {
           <br></br>
           <br></br>
 
-          <label> Is Pig Meat Containing? </label>
+          <label> Contém Carne Suína? </label>
           <label class="switch">
             <input type="checkbox" value={isPigMeatContaining} onChange={event => updateForm('isPigMeatContaining', event, 'checked')} />
             <span class="slider"></span>
@@ -113,7 +113,7 @@ export default class App extends Component {
           <br></br>
           <br></br>
 
-          <label> Is Chicken Meat Containing? </label>
+          <label> Contém Carne de Frango? </label>
           <label class="switch">
             <input type="checkbox" value={isChickenMeatContaining} onChange={event => updateForm('isChickenMeatContaining', event, 'checked')} />
             <span class="slider"></span>
@@ -121,7 +121,7 @@ export default class App extends Component {
           <br></br>
           <br></br>
 
-          <label> Is Fish Containing? </label>
+          <label> Contém Peixe? </label>
           <label class="switch">
             <input type="checkbox" value={isFishContaining} onChange={event => updateForm('isFishContaining', event, 'checked')} />
             <span class="slider"></span>
@@ -129,7 +129,7 @@ export default class App extends Component {
           <br></br>
           <br></br>
 
-          <label> Is Caffeine Containing? </label>
+          <label> Contém Cafeína? </label>
           <label class="switch">
             <input type="checkbox" value={isCaffeineContaining} onChange={event => updateForm('isCaffeineContaining', event, 'checked')} />
             <span class="slider"></span>
@@ -137,7 +137,7 @@ export default class App extends Component {
           <br></br>
           <br></br>
 
-          <label> Is Peaunt Containing? </label>
+          <label> Contém Amendoim? </label>
           <label class="switch">
             <input type="checkbox" value={isPeanutContaining} onChange={event => updateForm('isPeanutContaining', event, 'checked')} />
             <span class="slider"></span>
@@ -145,15 +145,7 @@ export default class App extends Component {
           <br></br>
           <br></br>
 
-          <label> Is it allowed to Vegetarians? </label>
-          <label class="switch">
-            <input type="checkbox" value={isAllowedToVegetarians} onChange={event => updateForm('isAllowedToVegetarians', event, 'checked')} />
-            <span class="slider"></span>
-          </label>
-          <br></br>
-          <br></br>
-
-          <label> Is it allowed to Vegans? </label>
+          <label> É recomendado para Veganos? </label>
           <label class="switch">
             <input type="checkbox" value={isAllowedToVegans} onChange={event => updateForm('isAllowedToVegans', event, 'checked')} />
             <span class="slider"></span>
@@ -161,8 +153,16 @@ export default class App extends Component {
           <br></br>
           <br></br>
 
+          <label> É recomendado para Vegetarianos? </label>
+          <label class="switch">
+            <input type="checkbox" value={isAllowedToVegetarians} onChange={event => updateForm('isAllowedToVegetarians', event, 'checked')} />
+            <span class="slider"></span>
+          </label>
+          <br></br>
+          <br></br>
 
-          <button type="button" className="formSubmit" onClick={() => addProduct()}>Add Product</button>
+
+          <button type="button" className="formSubmit" onClick={() => addProduct()}>Adicionar Produto</button>
         </form>
       </>
     )
